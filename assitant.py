@@ -1,5 +1,5 @@
 """
-Jarvis Study Assistant (Streamlit app)
+Study Assistant (Streamlit app)
 Single-file Python app that:
  - Ingests a folder of study materials (pdf, docx, pptx, txt, images, ppt)
  - Extracts text (pdfplumber, python-docx, python-pptx, pytesseract for images)
@@ -23,7 +23,7 @@ Notes:
  - This app is a starting point: tweak chunk size, overlap, and LLM prompt as you like.
 
 Usage:
- streamlit run jarvis_study_assistant.py
+ streamlit run assistant.py
 
 """
 
@@ -388,4 +388,5 @@ if st.button("Save config to local file"):
     cfg = {"upload_folder": upload_folder, "index_name": index_name, "embedding_mode": embedding_mode, "chunk_size": chunk_size, "overlap": overlap, "namespace": namespace}
     with open("jarvis_config.json", "w") as f:
         json.dump(cfg, f, indent=2)
+
     st.success("Config saved to jarvis_config.json")
